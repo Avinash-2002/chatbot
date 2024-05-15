@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Chatbot</title>
+    <style>
+        body { 
+            font-family: Arial, sans-serif; 
+            background-color: #f5f5f5; /* Set a light background color */
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        #chat { 
+            background-color: #fff; /* White background for the chat box */
+            border-radius: 8px; /* Rounded corners */
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); /* Drop shadow effect */
+            padding: 20px; 
+            width: 320px; 
+            max-width: 90%; /* Ensure it doesn't exceed the screen width */
+        }
+
+        h2 {
+            margin-top: 0;
+            text-align: center;
+            color: #333; /* Dark text color */
+        }
+
+        #messages { 
+            border: 1px solid #ccc; 
+            padding: 10px; 
+            height: 200px; 
+            overflow-y: scroll; 
+            margin-bottom: 10px; 
+            border-radius: 4px; /* Rounded corners for message container */
+        }
+
+        #input { 
+            width: calc(100% - 20px); /* Take up all available space, accounting for padding */
+            padding: 8px; 
+            border: 1px solid #ccc; 
+            border-radius: 4px; 
+            margin-bottom: 10px; 
+        }
+
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: #007bff; /* Blue button color */
+            color: #fff; /* White text color */
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #0056b3; /* Darker blue on hover */
+        }
+
+        a {
+            display: block;
+            text-align: center;
+            color: #007bff; /* Blue link color */
+            text-decoration: none;
+            margin-top: 10px;
+        }
+
+        a:hover {
+            text-decoration: underline; /* Underline on hover */
+        }
+    </style>
+</head>
+<body>
+    <div id="chat">
+        <h2>Chat</h2>
+        <div id="messages"></div>
+        <input type="text" id="input" placeholder="Type a message..." />
+        <button onclick="sendMessage()">Send</button><br><br>
+        <a href="upload.html" target="_blank">Click here to upload a file</a>
+    </div>
+    <script>
+        function sendMessage() {
+            const input = document.getElementById('input');
+            const message = input.value;
+            const messages = document.getElementById('messages');
+
+            messages.innerHTML += '<div><strong>You:</strong> ' + message + '</div>';
+
+            fetch('/api/chat', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(message)
+            })
+            .then(response => response.text())
+            .then(data => {
+                messages.innerHTML += '<div><strong>Bot:</strong> ' + data + '</div>';
+                input.value = '';
+            });
+        }
+    </script>
+</body>
+</html>

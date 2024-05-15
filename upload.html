@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Upload File</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5; /* Set a light background color */
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAT4AAACfCAMAAABX0UX9AAABPlBMVEX4+Pj////8/Pz8///yhiPyhCTygiXyiCHyiSDyjB7zkBvzlRfzjhzzkhn8/f/0tADxfQDyhAD0sADzmhTyeAD+9/DznRLzoQ/xfwDyiADyjwDzmgDzow3zpwr0rAb5zrXzjkL85NL3qIz97ObxXwDyliXyfRb97eHyjSv3vY/zkgDxOgD0fl72nH3zdkLzcjv839P61MHxcAr58NzzmUjzlzn0rGD0q1X627z1tW752Zf1sIT0nF/zj0j1r4PzllT2u5X0qHPznVn5y6n2s3z43cf30K/1pl32xZr0olH2vof0okX2xI/0nzH50KD1s2H968/0tVH0rC/7y8L0clbySw/5uKnzZjr427H2j3HxVBD4rpn1hmD95t70gFLyaSPyZRn1lWTydy33x231wlT2wk71vCz30ob63qX4y2mFlwWvAAAIuElEQVR4nO3dC1PaWBgGYHKCFKsiYcly0YpBSIBdFWi10KoVEQopXrpuu9ZVQbfbdv//H9hzSSBCEgGTMnNy3hksgSQz39PvJCFc4vOxsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCweCYAAM6RwBXNupafHYfkDIazrugnxnE8LwGOiQfwsMRDfNwlZl3ZT8h4FAQuhAKArsgAx9BDbDwK8InixoYo+ngyOQ4h5X6PAUAiKCVK9bd76wE5iiMH9vcOUzeAEHrZz7543Ha+0sE6JJPlgCFwMhp9dyiNIUixn23hqO98qT3UbRaRo+FaCSBBT/rZVI0HrVQLh+es7HDm5LD8VnmkBWn1s++81H5UnhsjcvioYd+Bs67TndjilXLhOf+c349vhswZbv3Hwu8kPmQDOOtK3YhltXCHIa2H/RMlfKTYjGAah6916/lq4WdmRs/i8XiYBN4bei6ctxnBs67V+VhUCvVKwfizkcTDwnotX29IkgIjNer52o4QNs4Yz0mWfvS1n0WdPA9bbyhCPFhrKqMyQKrXgnFBny0YP4RbQI+0n0XrKTkh+CBCPJeXzE1wpDwU1Od95bNowFlX63RMiwR8Iz6EJxzb2WmCx4IGKMwr5n60jV6TGmHv1ePzxgjzLfFRPBSxBedFCQoNUz/a+Ez18sJDvPpYdiT1BFlYaJr6zbpeh2Ompxr1EkJrAjyUvJDQ/WjnGymQ9N7i4jy8LcKb8H68YWuM+F5Ay5v2H12jd7Q8viUs9pNIVCbGQ6kkEnBptP3zFh/gm8LzgV578tYjEdsJuJqEMuJHNR883ks870dQp8RD6QhoFeLw8TPNfCDkSw70phy4ehrwPyL5YXjzRzEf3G20k0t6ksqT9DhOgetKqkN+NPPxrUQfb2nazd4gYja5lBjafdDLBzd8g95beLoe8Vt4ePqPWj44dD8UFrQUnNCDfgsLaPh6go9vJnW9J2/3+n4FuC7j3pdWPjjG+r2XlBzS4zgpWXiw96WWj+/ofMmmY3rwBUgyWeGp5wMhUdcrVB3U4zi1cOIBPl4t/EJy4qgex50Y249SPth8ml7Bqd2GHjF5Mtj60ckH+FONr9BxWI/jTpNSiHa+kxWst+L00EU5OeOp5gO8VPgVp3DuAt95UgzRzVddwXorZy7ocdzZqd5+NPKBEL+iNd9LV/iUP6jm489dbT7Yfvp5Uzr51JUYyoo7zcdxL/XRSydfjOSjS3rw4IVivpCoNZ8bu12Scx+1fICvrKzGVmOxVdf04GsP8sKDSr5ObBUm5vwLjkEAxXwfkd6qazsOyvlCLzDfH+NTTOVHKV9IjL2AWX1DyixeXBTt3+r487cp/GjlA6GXmC+G97vpT7+hFO0kfv/E+HBwSfz5KuYjMn9eFC8+/+UGH6CSD/CXmA8dM198+qIVaydxfcW6D4fwnSK9F9/h/b+vLsaQmJKPzu7j+DeY7xLe/Zz53K+3uElGcDqNJ25AemtrE+9Trnvcxiac2MDP36Rvt2/JYuBveDeNV1r8sr2VNu6BaOZbW1t7gY76NjLd/lbvIlPC/3a72DXVu03f9rpoietu8eo6fZ3p3SCnq+5meitzB++K3cyX9PUVQktnttNfMr0N+vmAxodbJZXJaE3FlTS+7W30eLeHptI91GZ39xi51NtCfLjx7jKQcjODHhZ9aDWbqC97t0Y+jko+2H1rKKTKm9ty+QBLlsqE7/4e8ZWRByeWUZfddVP4mYNyv1VLZfjQXVmfvN8i4z4zaD9au0/j+9aX2C/fFw186+uYT7PcR3xlUTMjX1kASvEQ8R2Wa+QJpXwIRFEE+lI08wH+B+L7Ohhn9YCsQJyokU9ukAnEtxcge15JPkRz70fL0UAANeReVD5AbxOXAgHyaxFyygN8l4jvnwEfLL8G/8hmfO8e8MHuq8m1kgIkAiXVZPktWv4gRaIY+Dgq+bjQ+VoksvbdwMflctDAb+TzG/hqfsKXgnMoiIvjGn6tz8QjeE/xH3LDoZfvJeSLGPnEXBt2UhB/n0jJvYJ/m0HCt3OE+HJk4ignco0gdsvn9I9lKcE85H/lHT4gIj48ePP4u3/g+DkclWBnB02838F8ixofdOWq5JnWvAqR59EHsqTcDuTDH8WvLDa1pyBl0wt8/LLO11nKtqu72ewxmqhnd1Q122p/QHxLD/haS1W1nd1Fj+xm2+putpmFUu2TY7WafU0e/aCqu8mOJ/i+Qr7/8N2Keva62pFIxZXq62qFa52i9uqQnUAHTTQ7XAM+pbXW6dlrVVTQMhJauNJf9kw1fDOE4rPN/PfIcuTfka2Vo6GZ7zKyvPzNvnzGZxLtvQ4R8i27zcdRygfb79vycsSZr3J4kg9t/Nx8m1Ifu3Tyhc4h3yXjmzT6p+5CcPC+cZePo5gPjt7IV+viHdCjmY9Do9fNXS/1X0z45uq+g3q+H5HIDxf1KOcDYNnFjd/gM0V08qG32yKuHTgD+vlCvohrR36e+D7vG7dOugAv8KGTpu7se42fpqSVD7/h9n20dif0vMCHTzq7rUczX0hcc+HQzyt8+NjZZT2q+eDwdfq0y/BPiFPMh197OHzo7CU+9CH7/1zVo5sPHb04+bXA0V//p5sP7T6cG74m106gnQ+OXwf1KOcz+91mB69RObqmWdfrcMzLdkjP5NFZ1+twTEp0pv/MV0LZ2DW9YoITfhbroI3P/HInT/azWsGsq3U8luU/AdB66VlX63gs6nyKn/Wy1I1dmytlTQlot9ysa3UhlrVO5WerTmHz2V4lcGJA+0VmXak7mVZj0tlnXadLsQOa4ALaj81K5dBFseUZ6xLkY8xErd7jV4e2xxkPeNY1upnxmmtEyepxj+k9fm33h1TDeXzhWdfndibZPUxG5wU935iAyEK72f9UjsfwUBw6zexNPBTHAb2Eh/Pkc319OeA5OxYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFi/nf6TZD5obn3y5AAAAAElFTkSuQmCC');
+            
+            background-position: center; 
+        }
+
+        #uploadForm {
+            background-color: #fff; /* White background for the form */
+            border-radius: 8px; /* Rounded corners */
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); /* Drop shadow effect */
+            padding: 20px;
+            width: 320px;
+            max-width: 90%; /* Ensure it doesn't exceed the screen width */
+            text-align: center;
+        }
+
+        h2 {
+            margin-top: 0;
+            color: #333; /* Dark text color */
+        }
+
+        #fileInput {
+            margin-bottom: 10px;
+        }
+
+        button {
+            padding: 10px 20px;
+            background-color: #007bff; /* Blue button color */
+            color: #fff; /* White text color */
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #0056b3; /* Darker blue on hover */
+        }
+    </style>
+</head>
+<body>
+    <h2>Upload Document .</h2><br>
+    <form id="uploadForm">
+        <input type="file" id="fileInput" />
+        <button type="button" onclick="uploadFile()">Upload</button>
+    </form>
+    <script>
+        function uploadFile() {
+            const fileInput = document.getElementById('fileInput');
+            const formData = new FormData();
+            formData.append('file', fileInput.files[0]);
+
+            fetch('/api/upload', {
+                method: 'POST',
+                body: formData
+            })
+            .then(response => response.text())
+            .then(data => alert(data));
+        }
+    </script>
+</body>
+</html>
